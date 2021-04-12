@@ -1,5 +1,6 @@
 # https://hub.docker.com/_/node/
-FROM node:8-onbuild
+ARG NODE_IMAGE=node:8-onbuild
+FROM $NODE_IMAGE
 
 # use debug to troubleshoot
 ENV LOG_LEVEL=error
@@ -10,6 +11,9 @@ ENV WEBHOOK_PROXY_URL=https://localhost:3000/
 ENV PRIVATE_KEY="someprivatestring"
 
 # see https://github.com/nodejs/docker-node/blob/e3ec2111af089e31321e76641697e154b3b6a6c3/docs/BestPractices.md#global-npm-dependencies
+
+C:\projects\GitHub\WEB1066-probot-hello
+
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
 
